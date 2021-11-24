@@ -5,6 +5,10 @@ function Persona(nombre, apellido, email){
     this.nombre = nombre;
     this.apellido = apellido;
     this.email = email;
+    // Tambien podemos agregar metodos al constructor:
+    this.nombreCompleto = function(){
+        return this.nombre + ' ' + this.apellido;
+    }
 }
 
 // Para crear objetos, debemos usar la palabra reservada new ´
@@ -14,5 +18,5 @@ let madre = new Persona('Leidi', 'Panameño', 'panamenosuleidi@gmail.com');
 
 
 padre.nombre = 'Samir';
-console.log(padre);
-console.log(madre);
+console.log(padre.nombreCompleto());
+console.log(madre.nombreCompleto());
