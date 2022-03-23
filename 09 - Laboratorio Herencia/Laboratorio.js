@@ -76,11 +76,11 @@ console.log(persona1.toString());
 let empleado1 = new Empleado("Elkin", "Panamian", 17, 5000);
 console.log(empleado1.toString());
 
-let empleado = new Empleado('Samir', 'Angulo', 17, 5000);
+let empleado = new Empleado("Samir", "Angulo", 17, 5000);
 console.log(empleado.toString());
 
 let cliente1 = new Cliente("Elkin", "Panameño", 16);
 console.log(cliente1.toString());
 
 let cliente2 = new Cliente("Elkin", "Angulo", 16);
-console.log(cliente2.toString())
+console.log(cliente2.toString());
