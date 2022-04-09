@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Practicando el DOM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root{
+        --black-color: rgb(80, 80, 80);
+        --withe-color: rgb(224, 224, 224);
+      }
+      * {
+        font-family: "Oswald", sans-serif;
+      }
+      body {
+        background-color: var(--black-color);
+        color: var(--withe-color);
+      }
+      .title {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 0.2em solid black;
+      }
+      .card {
+        padding: 1em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Web Gallery</h1>
+    <section class="cards">
+      <template id="template-cards">
+        <figure>
+          <img />
+          <figcaption></figcaption>
+        </figure>
+      </template>
+    </section>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
