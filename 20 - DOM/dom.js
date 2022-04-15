@@ -34,8 +34,7 @@ setTimeout(() => {
 document.write("<h2>Hola Mundo desde el DOM</h2>")
  */
 
-
-/* 
+/* 3
 // Un elemento es una etiqueta html.
 // Un nodo es un elemento o un texto.
 
@@ -108,7 +107,6 @@ console.log($linkDOM.hasAttribute("data-descripcion"));
 
 */
 
-
 /* // Estilos y Variables CSS
 
 const $linkDOM = document.querySelector(".link-dom");
@@ -178,7 +176,6 @@ _stylePie.textAlign = "center";
 _stylePie.margin = "auto";
 */
 
-
 /* 
 // Llamar clases CSS
 
@@ -207,7 +204,6 @@ $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia");
  */
 
-
 /* 
 // Texto HTML
 
@@ -233,7 +229,6 @@ $queEsDOM.innerHTML = text; // Es para inserta texto HTML
 $queEsDOM.outerHTML = text; // Reemplaza el texto en donde esta el ID con el que le pasamos.
 */
 
-
 /* // Recorriendo el DOM (DOM Traversing): Enfocado a los elementos.
 
 // Seleccionamos la section con la clase cards:
@@ -251,7 +246,6 @@ console.log($cards.children[3].closest("section")); // Nos busca el ancestro mas
 // Para seleccionar el padre del section cards lo hacemos con la propiedad parentElement:
 console.log($cards.parentElement);
  */
-
 
 /* // Creando Elementos y Fragmentos:
 
@@ -368,8 +362,6 @@ cardContent.forEach((element) => {
 });
 $cards.appendChild($fragment); */
 
-
-
 /* 
 // Modificando elementos (Old Style):
 
@@ -398,8 +390,6 @@ $newCard.classList.add("card");
 
 document.body.appendChild($cloneCards); 
 */
-
-
 
 // Modificando Elementos (Cool Style):
 
@@ -501,19 +491,19 @@ const removeDoubleClick = (e) => {
 // Solo funciona con funciones expresada y declaradass, no con anonimas.
 $eventoRemover.addEventListener("dblclick", removeDoubleClick); */
 
+// Fujo de Eventos:
 
+/* const $divEventos = document.querySelectorAll(".eventos-flujo div");
+console.log($divEventos); */
 
-// Fujo de Eventos: 
-
-const $divEventos = document.querySelectorAll(".eventos-flujo div");
-console.log($divEventos);
-
-function flujoEventos(e) {
-    // className: El nombre de la clase.
-    console.log(`Hola, te saluda ${this}, el click que originó ${e.target.className}`);
-    // e.stopPropagation(); // Evitamos la propagacion del evento,
-    // e.preventDefault(); // Bloqueamos la funcion en un evento.
-}
+/* function flujoEventos(e) {
+  // className: El nombre de la clase.
+  console.log(
+    `Hola, te saluda ${this}, el click que originó ${e.target.className}`
+  );
+  // e.stopPropagation(); // Evitamos la propagacion del evento,
+  // e.preventDefault(); // Bloqueamos la funcion en un evento.
+} */
 
 // $divEventos.forEach((div) => {
 //     div.addEventListener("click", flujoEventos);
@@ -532,12 +522,10 @@ function flujoEventos(e) {
 
 // const $form = document.querySelectorAll("form input");
 
-
 // function stopDefAction(e) {
 //     alert("Ey, eso no se toca.");
 //     e.stopPropagation();
 // }
-
 
 // $form.forEach((input) => {
 //     input.addEventListener("click", stopDefAction, {
@@ -551,7 +539,6 @@ function flujoEventos(e) {
 //     }
 // });
 
-
 // Delegacion de eventos:
 
 // Para evitar la propagacion y los eventos podemos poner.
@@ -559,15 +546,113 @@ function flujoEventos(e) {
 
 // Es la mejor manera de usar los eventos.
 
-document.addEventListener("click", (e) => {
-    // console.log("Click en:\n", e.target);
+/* document.addEventListener("click", (e) => {
+  // console.log("Click en:\n", e.target);
 
-    if (e.target.matches(".eventos-flujo div")) {
-        flujoEventos(e);
-    }
+  if (e.target.matches(".eventos-flujo div")) {
+    flujoEventos(e);
+  }
 
-    if (e.target.matches(".eventos-flujo a")) {
-        console.log("Click en:\n", e.target.getAttribute("href"));
-        e.preventDefault(); // Quita la funcion del elemento.
+  if (e.target.matches(".eventos-flujo a")) {
+    console.log("Click en:\n", e.target.getAttribute("href"));
+    e.preventDefault(); // Quita la funcion del elemento.
+  }
+}); */
+
+/* // BOM: Browser Object Model: Son metododos que cuelgan de window:
+// Vista observable de la pagina web.
+
+window.addEventListener("resize", (e) => {
+  console.clear();
+  console.log("********** Evento Resize **********");
+  console.log(window.innerWidth); // Nos muestra el ancho del viewport
+  console.log(window.innerHeight); // Nos muestra la altura del viewport
+  console.log(window.outerWidth); // Ancho de la pantalla del navegador
+  console.log(window.outerHeight); // Alto de la pantalla del navegador
+});
+
+window.addEventListener("scroll", (e) => {
+  console.clear();
+  console.log("********** Evento Scroll **********");
+  console.log(window.scrollX);
+  console.log(window.scrollY);
+  console.log(e);
+});
+
+window.addEventListener("load", (e) => {
+  // console.clear();
+  console.log("********** Evento Load **********");
+  console.log(screenX);
+  console.log(screenY);
+  console.log(e);
+});
+
+// el evento load tambien esta en el document:
+document.addEventListener("DOMContentLoaded", (e) => {
+  // console.clear();
+  console.log("********** Evento DOMContentLoaded **********");
+  console.log(screenX);
+  console.log(screenY);
+  console.log(e);
+});
+ */
+
+// Metodos del BOM
+
+// Nota, no es necesario poner window:
+/* window.alert("Alert");
+window.confirm("Confirmación");
+window.prompt("Aviso con input"); */
+
+/* const $btnAbrir = document.getElementById("abrir-ventana"),
+    $btnCerrar = document.getElementById("cerrar-ventana"),
+    $btnImprimir = document.getElementById("imprimir-ventana");
+
+let _ventana;
+
+document.addEventListener("click", e => {
+    if (e.target === $btnAbrir) {
+        _ventana = open("https://github.com/paelsam");
     }
-})
+    if (e.target === $btnCerrar) {
+        _ventana.close();
+    }
+    if(e.target == $btnImprimir) {
+        print();
+    }
+}) */
+
+
+// BOM: Objetos URL, Historial y Navegador:
+/* 
+console.log("********** Objeto URL (location) **********");
+console.log(location);
+console.log(location.origin); // Nos muestra la url de la pagina web.
+console.log(location.protocol); // Nos muestra el protocolo de la web.
+console.log(location.hostname); // EL nombre del host (Nombre del dominio)
+console.log(location.host); // El host completa sin el procoloconsole.log(location);
+console.log(location.port); // Puerto de la pagina, por defecto el puerto 80 aparece vacio ("")
+console.log(location.href); // Nos muestra la url completa.
+console.log(location.hash); // Nos muestra el id que esta selecciona
+console.log(location.pathname); // Nos muestra el nombre de los archivos
+console.log(location.search); // Muestra el paso de los parametros. */
+
+console.log("********** Objeto History **********");
+console.log(history);
+console.log(history.length);
+// history.back();
+// history.forward();
+// history.go();
+
+console.log("********** Objeto Navigator **********");
+console.log(navigator);
+console.log(navigator.onLine)
+
+
+
+
+
+
+
+
+

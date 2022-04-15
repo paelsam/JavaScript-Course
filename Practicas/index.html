@@ -3,53 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
-    <title>Practicando el DOM</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root{
-        --black-color: rgb(80, 80, 80);
-        --withe-color: rgb(224, 224, 224);
-      }
-      * {
-        font-family: "Oswald", sans-serif;
-      }
-      body {
-        background-color: var(--black-color);
-        color: var(--withe-color);
-      }
-      .title {
-        display: block;
-        text-align: center;
-        font-size: 3rem;
-      }
-      .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        border: 0.2em solid black;
-      }
-      .card {
-        padding: 1em;
-        text-align: center;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios del DOM</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1 class="title">Web Gallery</h1>
-    <section class="cards">
-      <template id="template-cards">
-        <figure>
-          <img />
-          <figcaption></figcaption>
-        </figure>
-      </template>
-    </section>
+    <header class="header">
+      <h1>Hola Mundo</h1>
+      <nav class="nav" style="display: none">
+        <ul class="nav-list">
+          <li class="nav-list__items"><a href="#">Inicio</a></li>
+          <li class="nav-list__items"><a href="#">Quienes Somos</a></li>
+          <li class="nav-list__items"><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="button-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <nav id="nav-responsive">
+      <ul class="nav-responsive-list">
+        <li class="nav-responsive-list__item"><a href="#">Inicio</a></li>
+        <li class="nav-responsive-list__item"><a href="#">Quienes Somos</a></li>
+        <li class="nav-responsive-list__item"><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
     <script src="./js/index.js"></script>
   </body>
 </html>
